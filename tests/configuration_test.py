@@ -13,5 +13,13 @@ class TestSetup(unittest.TestCase):
         with self.assertRaises(IOError):
             configuration.get_configuration(file_name = "does-not.exist")
 
+    def test_invalid_config(self):
+        with self.assertRaises(Exception):
+            configuration.get_configuration(file_name = "test_bad_config.json")
+
+    def test_returns_type(self):
+        type = configuration.get_configuration(file_name = "test_good_config.json")
+        self.assertEqual(type, "My favorite food")
+
 if __name__ == '__main__':
     unittest.main()

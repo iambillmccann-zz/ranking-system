@@ -19,8 +19,13 @@ def get_configuration(file_name = CONFIG_FILE_NAME):
         file = open(file_name,) 
         data = json.load(file)
         file.close()
+        print("Type = {type} and file = {file}".format(type=data["type"], file=data["file"]))
+    except IOError:
+        print("The application could not read the file {file_name}.".format(file_name = file_name))
+        raise
     except:
-        print("The application could not read the configuration file.")
-        raise IOError("The application could not read the configuration file.")
+        print("Cannot process the file {file_name}.".format(file_name = file_name))
+        raise
     else:
         print("All good")
+        return data["type"]
