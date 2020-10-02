@@ -18,8 +18,9 @@ class TestSetup(unittest.TestCase):
             configuration.get_configuration(file_name = "test_bad_config.json")
 
     def test_returns_type(self):
-        type = configuration.get_configuration(file_name = "test_good_config.json")
+        type, file = configuration.get_configuration(file_name = "test_good_config.json")
         self.assertEqual(type, "My favorite food")
+        self.assertEqual(file, "test_data.csv")
 
 if __name__ == '__main__':
     unittest.main()

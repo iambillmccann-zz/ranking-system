@@ -1,6 +1,6 @@
 import json
 
-CONFIG_FILE_NAME = "./configuration.json"
+CONFIG_FILE_NAME = "configuration.json"
 
 def get_configuration(file_name = CONFIG_FILE_NAME):
     """Get the app's configuration
@@ -16,10 +16,16 @@ def get_configuration(file_name = CONFIG_FILE_NAME):
     """
     
     try:
+
         file = open(file_name,) 
         data = json.load(file)
         file.close()
-        print("Type = {type} and file = {file}".format(type=data["type"], file=data["file"]))
+
+        # The following print statements will throw exceptions if the json if not formatted
+        # correctly. The same affect can be achieved by assigning variables.
+        print("\nThis program is setup to rank {type}".format(type = data["type"]))
+        print("The results will be kept in the file named {file}".format(file = data["file"]))
+
     except IOError:
         print("The application could not read the file {file_name}.".format(file_name = file_name))
         raise
@@ -27,5 +33,4 @@ def get_configuration(file_name = CONFIG_FILE_NAME):
         print("Cannot process the file {file_name}.".format(file_name = file_name))
         raise
     else:
-        print("All good")
-        return data["type"]
+        return (data["type"], data["file"])
