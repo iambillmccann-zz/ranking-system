@@ -1,4 +1,3 @@
-from src.functions.configuration import get_configuration
 import unittest
 from src.functions import configuration
 

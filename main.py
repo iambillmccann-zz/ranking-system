@@ -3,16 +3,20 @@
 # This is a console application that sorts or ranks a list of things based on a subjective rating by the
 # user.
 
+from src.functions.additem import add_item
 from src.functions.configuration import get_configuration
-from src.functions import mainmenu
+from src.functions.mainmenu import get_user_input
+from src.functions.mainmenu import clear_console
+from src.functions.datafile import get_data
 
 EXIT = "x"
+PROMPT = "Type your selection here ==> "
 
 # There is no unittest coverage for __main__
 
 if __name__ == "__main__":
 
-    mainmenu.clear_console()
+    clear_console()
     print('\n-----------------------------------------------------------------------')
     print('This is the Simple Ranking Program')
     print('Use this to rank items based on any subjective reason. The program works')
@@ -23,11 +27,14 @@ if __name__ == "__main__":
     print('-----------------------------------------------------------------------')
 
     type, file = get_configuration()
+    data = get_data(file)
 
-    choice = mainmenu.get_user_input()
+    choice = get_user_input(PROMPT)
     while choice != EXIT:
-        mainmenu.clear_console()
-        choice = mainmenu.get_user_input()
+        if choice == "1": data = add_item(data, type)
+
+        clear_console()
+        choice = get_user_input(PROMPT)
 
     print('\n-----------------------------------------------------------------------')
     print('Goodbye.')
