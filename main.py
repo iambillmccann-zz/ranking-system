@@ -6,9 +6,8 @@
 from src.functions.additem import add_item
 from src.functions.showitems import show_items
 from src.functions.configuration import get_configuration
-from src.functions.mainmenu import get_user_input
-from src.functions.mainmenu import clear_console
-from src.functions.datafile import get_data
+from src.functions.mainmenu import get_user_input, clear_console
+from src.functions.datafile import get_data, save_data
 
 EXIT = "x"
 PROMPT = "Type your selection here ==> "
@@ -32,7 +31,9 @@ if __name__ == "__main__":
 
     choice = get_user_input(PROMPT)
     while choice != EXIT:
-        if choice == "1": data = add_item(data, type)
+        if choice == "1": 
+            data = add_item(data, type)
+            save_data(data, type, file)
         if choice == "2": show_items(data)
 
         clear_console()
