@@ -30,4 +30,4 @@ def show_items(data):
         rank += 1
         print("{rank}.  {item}".format(rank = rank, item = item))
 
-    input("\nPress the Enter key to continue")
+    input("\nPress the Enter key to continue ")
