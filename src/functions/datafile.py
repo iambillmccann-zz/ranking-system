@@ -10,8 +10,18 @@ def get_data(file_name):
         data         A list of items in ranked order
     """
 
-    # Do something
-    return []
+    with open("data/" + file_name, mode = "r") as file:
+
+        data = []
+        first = True
+        csvFile = csv.reader(file)
+        for item in csvFile:
+            if first:
+                first = False
+            else:
+                data.append(item[0])
+
+    return data
 
 def save_data(data, type, file_name):
     """ Save the data into a csv file
