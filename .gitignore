@@ -126,3 +126,4 @@ dmypy.json
 
 # My ignored files
 .metals/
+*.db
