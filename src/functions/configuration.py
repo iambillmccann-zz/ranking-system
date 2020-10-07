@@ -1,8 +1,9 @@
 import json
 
 CONFIG_FILE_NAME = "configuration.json"
+CONFIG_NAME = "games"
 
-def get_configuration(file_name = CONFIG_FILE_NAME):
+def get_configuration(configuration, file_name):
     """Get the app's configuration
     
     Retrieve the configuration variables from the configuration file.
@@ -18,8 +19,11 @@ def get_configuration(file_name = CONFIG_FILE_NAME):
     try:
 
         file = open(file_name,) 
-        data = json.load(file)
+        configs = json.load(file)
         file.close()
+
+        configuration = configuration if configuration in configs else CONFIG_NAME
+        data = configs[configuration]
 
         # The following print statements will throw exceptions if the json if not formatted
         # correctly. The same affect can be achieved by assigning variables.

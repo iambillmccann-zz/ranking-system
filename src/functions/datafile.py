@@ -1,4 +1,5 @@
 import csv
+import os
 
 def get_data(file_name):
     """ Load the data into a list
@@ -9,6 +10,8 @@ def get_data(file_name):
     Returns:
         data         A list of items in ranked order
     """
+
+    if not os.path.isfile("data/" + file_name): return []
 
     with open("data/" + file_name, mode = "r") as file:
 

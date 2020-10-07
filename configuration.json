@@ -1,4 +1,4 @@
 {
-    "type" : "Video games (XBox)",
-    "file" : "game_list.csv"
+    "games"  : {"type" : "Video games (XBox)", "file" : "game_list.csv"},
+    "movies" : {"type" : "Favorite movies", "file" : "movie_list.csv"}
 }
