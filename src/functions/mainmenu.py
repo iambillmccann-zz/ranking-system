@@ -25,6 +25,18 @@ def clear_console():
     else: 
         _ = system('clear') 
 
+def print_header(title):
+    """ Display a label on the console
+
+    Args:
+        None
+    Returns:
+        None
+    """
+    print('\n-----------------------------------------------------------------------')
+    print(title)
+    print('-----------------------------------------------------------------------')
+
 def show_menu():
     """ Display the menu choices on the screen
 
@@ -39,9 +51,7 @@ def show_menu():
     Returns:
         None
     """
-    print('\n-----------------------------------------------------------------------')
-    print('                           M A I N  M E N U')
-    print('-----------------------------------------------------------------------')
+    print_header('                           M A I N  M E N U')
     print(' Choose one of the following:')
     print('')
     print(' 1. Add a new item to the list')

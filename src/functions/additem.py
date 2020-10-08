@@ -1,20 +1,5 @@
 import math
-from src.functions.mainmenu import clear_console
-
-def print_header():
-    """ Display a label heading on the console
-
-    There is no unittest coverage for this function
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    print('\n-----------------------------------------------------------------------')
-    print('                            A D D  I T E M')
-    print('-----------------------------------------------------------------------')
+from src.functions.mainmenu import clear_console, print_header
 
 def is_greater(thing, item):
     """ Pick which item is higher ranking
@@ -88,7 +73,7 @@ def add_item(data, type):
 
     # prompt for item
     clear_console()
-    print_header()
+    print_header('                            A D D  I T E M')
     prompt_message = "\nAdd something new for {type}, leave blank to quit ==> ".format(type = type.lower())
     thing = input(prompt_message)
 

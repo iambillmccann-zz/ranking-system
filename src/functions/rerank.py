@@ -1,4 +1,4 @@
-from src.functions.mainmenu import clear_console
+from src.functions.mainmenu import clear_console, print_header
 from src.functions.showitems import print_items
 
 def rerank_items(data):
@@ -13,5 +13,6 @@ def rerank_items(data):
     """
 
     clear_console()
+    print_header('                        R E - R A N K  I T E M')
     print("Hello World")
     input("\nPress the Enter key to continue ")

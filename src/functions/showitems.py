@@ -1,16 +1,4 @@
-from src.functions.mainmenu import clear_console
-
-def print_header():
-    """ Display a label on the console
-
-    Args:
-        None
-    Returns:
-        None
-    """
-    print('\n-----------------------------------------------------------------------')
-    print('                          S H O W  I T E M S')
-    print('-----------------------------------------------------------------------')
+from src.functions.mainmenu import clear_console, print_header
 
 def print_items(data):
     """ Display the list
@@ -35,7 +23,7 @@ def show_items(data):
     """
 
     clear_console()
-    print_header()
+    print_header('                          S H O W  I T E M S')
     print_items(data)
 
     input("\nPress the Enter key to continue ")
