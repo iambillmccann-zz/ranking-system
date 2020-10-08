@@ -46,15 +46,14 @@ if __name__ == "__main__":
 
     choice = get_user_input(PROMPT)
     while choice != EXIT:
-        if choice == "1": 
-            data = add_item(data, type)
-            save_data(data, type, file)
+        if choice == "1": data = add_item(data, type)
         if choice == "2": rerank_items(data)
         if choice == "3": show_items(data)
 
         clear_console()
         choice = get_user_input(PROMPT)
 
+    save_data(data, type, file)
     print('\n-----------------------------------------------------------------------')
     print('Goodbye.')
     print('-----------------------------------------------------------------------')
