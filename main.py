@@ -11,6 +11,7 @@ from src.functions.showitems import show_items
 from src.functions.configuration import CONFIG_NAME, get_configuration
 from src.functions.mainmenu import get_user_input, clear_console
 from src.functions.datafile import get_data, save_data
+from src.functions.rerank import rerank_items
 
 EXIT = "x"
 PROMPT = "Type your selection here ==> "
@@ -48,7 +49,8 @@ if __name__ == "__main__":
         if choice == "1": 
             data = add_item(data, type)
             save_data(data, type, file)
-        if choice == "2": show_items(data)
+        if choice == "2": rerank_items(data)
+        if choice == "3": show_items(data)
 
         clear_console()
         choice = get_user_input(PROMPT)

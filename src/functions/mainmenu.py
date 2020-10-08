@@ -45,7 +45,8 @@ def show_menu():
     print(' Choose one of the following:')
     print('')
     print(' 1. Add a new item to the list')
-    print(' 2. Show the list')
+    print(' 2. Rerank an item')
+    print(' 3. Show the list')
     print('')
     print(' X. Exit')
     print('')
@@ -69,7 +70,7 @@ def get_user_input(prompt_message):
 
     show_menu()
     choice =  input(prompt_message).lower()
-    while choice not in ['1', '2', 'x']:
+    while choice not in ['1', '2', '3', 'x']:
         choice = input(BADINPUT).lower()
 
     return choice
